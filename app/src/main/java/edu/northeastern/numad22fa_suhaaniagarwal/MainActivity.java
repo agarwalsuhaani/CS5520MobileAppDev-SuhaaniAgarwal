@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,5 +29,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText("Hello World!");
         textView.setTextColor(Color.RED);
+    }
+
+    public void toggleButton(View v) {
+        ToggleButton simpleToggleButton = (ToggleButton) findViewById(R.id.simpleToggleButton);
+        Boolean ToggleButtonState = simpleToggleButton.isChecked();
     }
 }

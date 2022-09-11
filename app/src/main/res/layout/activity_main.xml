@@ -19,5 +19,14 @@
         android:text="Hello World!"
         android:textSize="25sp"
         android:textColor="#f00"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="textMessage"/>
+
+    <ToggleButton
+        android:id="@+id/simpleToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:onClick="toggleButton" />
 </RelativeLayout>
