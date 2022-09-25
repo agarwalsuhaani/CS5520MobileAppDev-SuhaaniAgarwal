@@ -22,11 +22,13 @@
         android:layout_centerHorizontal="true"
         android:onClick="textMessage"/>
 
-    <ToggleButton
-        android:id="@+id/simpleToggleButton"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50sp"
-        android:onClick="toggleButton" />
+        android:onClick="displayToastMsg"
+        android:layout_margin="130dp"
+        android:text="Clicky Clicky" />
+
+
 </RelativeLayout>

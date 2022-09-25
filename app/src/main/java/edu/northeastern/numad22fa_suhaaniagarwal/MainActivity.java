@@ -2,9 +2,11 @@ package edu.northeastern.numad22fa_suhaaniagarwal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -31,8 +33,15 @@ public class MainActivity extends AppCompatActivity {
         textView.setTextColor(Color.RED);
     }
 
-    public void toggleButton(View v) {
-        ToggleButton simpleToggleButton = (ToggleButton) findViewById(R.id.simpleToggleButton);
-        Boolean ToggleButtonState = simpleToggleButton.isChecked();
+    public void clickActivity(View v) {
+        Button btn = (Button)findViewById(R.id.button2);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ClickyClickyActivity.class));
+            }
+        });
     }
+
 }
