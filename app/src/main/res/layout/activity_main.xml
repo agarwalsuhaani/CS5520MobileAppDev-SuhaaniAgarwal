@@ -29,4 +29,13 @@
         android:onClick="clickActivity"
         android:layout_margin="130dp"
         android:text="Clicky Clicky" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="linkCollector"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="125dp"
+        android:text="Link Collector" />
 </RelativeLayout>

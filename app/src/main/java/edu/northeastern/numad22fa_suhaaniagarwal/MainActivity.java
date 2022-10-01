@@ -42,4 +42,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void linkCollector(View v) {
+        Button btn = (Button)findViewById(R.id.button3);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LinkCollector.class));
+            }
+        });
+    }
 }
