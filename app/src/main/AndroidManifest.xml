@@ -14,9 +14,15 @@
         android:theme="@style/Theme.NUMAD22Fa_SuhaaniAgarwal"
         tools:targetApi="31">
         <activity
+            android:name=".dialog"
+            android:exported="false" />
+        <activity
+            android:name=".activity_link_layout"
+            android:exported="false" />
+        <activity
             android:name=".LinkCollector"
-            android:exported="false"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name=".ClickyClickyActivity"
             android:exported="false" />
@@ -25,6 +31,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
