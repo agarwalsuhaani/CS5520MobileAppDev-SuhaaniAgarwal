@@ -52,4 +52,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void primeDirective(View v) {
+        Button btnPrime = (Button) findViewById(R.id.primeDirective);
+        btnPrime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Prime.class));
+            }
+        });
+    }
 }

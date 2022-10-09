@@ -38,4 +38,15 @@
         android:layout_marginTop="240dp"
         android:layout_marginLeft="125dp"
         android:text="Link Collector" />
+
+    <Button
+        android:id="@+id/primeDirective"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="173dp"
+        android:layout_marginStart="120dp"
+        android:text="Prime Directive" />
 </RelativeLayout>
