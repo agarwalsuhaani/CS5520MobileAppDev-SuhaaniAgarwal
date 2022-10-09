@@ -1,8 +1,10 @@
 package edu.northeastern.numad22fa_suhaaniagarwal;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -66,6 +68,23 @@ public class Prime extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                //.setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Closing Activity")
+                .setMessage("Are you sure you want to close this activity?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
 }
