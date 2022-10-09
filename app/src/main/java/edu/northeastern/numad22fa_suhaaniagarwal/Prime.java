@@ -15,7 +15,8 @@ import android.widget.TextView;
 public class Prime extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Handler textHandler = new Handler();
-    private TextView txtStatus;
+    private Handler textHandlerCurrent = new Handler();
+    private TextView txtStatus, txtPrime;
     private Button terminate;
     private volatile boolean stop = false;
 
@@ -25,6 +26,7 @@ public class Prime extends AppCompatActivity {
         setContentView(R.layout.activity_prime);
         txtStatus = findViewById(R.id.txtView_status);
         terminate = findViewById(R.id.btn_terminate);
+        txtPrime = findViewById(R.id.txt_prime);
     }
 
     public void runOnRunnableThread (View view) {
@@ -39,10 +41,19 @@ public class Prime extends AppCompatActivity {
     class RunnableThread implements Runnable {
         @Override
         public void run() {
-            for (int i = 3; i < 1000; i+=2) {
+            int i;
+            for (i = 3; i < 1000; i+=2) {
+                int current = i;
                 if(stop) {
                     return;
                 }
+                textHandlerCurrent.post(new Runnable() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void run() {
+                        txtStatus.setText("Current Number Checked " + current);
+                    }
+                });
                 int count = 0;
                 for (int num = i; num>=1; num--) {
                     if(i % num == 0) {
@@ -55,8 +66,7 @@ public class Prime extends AppCompatActivity {
                         @SuppressLint("SetTextI18n")
                         @Override
                         public void run() {
-
-                            txtStatus.setText("Latest Prime Number" + temp);
+                            txtPrime.setText("Latest Prime Number" + temp);
                         }
                     });
                     Log.d(TAG, "Running on a different thread using Runnable Interface: " + i);
@@ -73,7 +83,6 @@ public class Prime extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                //.setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Closing Activity")
                 .setMessage("Are you sure you want to close this activity?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
