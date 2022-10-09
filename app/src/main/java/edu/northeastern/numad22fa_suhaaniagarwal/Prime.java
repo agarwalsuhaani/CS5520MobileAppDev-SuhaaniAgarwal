@@ -15,6 +15,7 @@ public class Prime extends AppCompatActivity {
     private Handler textHandler = new Handler();
     private TextView txtStatus;
     private Button terminate;
+    private volatile boolean stop = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,29 +30,31 @@ public class Prime extends AppCompatActivity {
         new Thread(runnableThread).start();
     }
 
+    public void stopThread(View view) {
+        stop = true;
+    }
+
     class RunnableThread implements Runnable {
         @Override
         public void run() {
             for (int i = 3; i < 1000; i+=2) {
+                if(stop) {
+                    return;
+                }
                 int count = 0;
                 for (int num = i; num>=1; num--) {
                     if(i % num == 0) {
                         count ++ ;
                     }
                 }
-                textHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                });
                 if (count == 2 ) {
                     int temp = i;
                     textHandler.post(new Runnable() {
                         @SuppressLint("SetTextI18n")
                         @Override
                         public void run() {
-                            txtStatus.setText("Current Prime Number: " + temp);
+
+                            txtStatus.setText("Latest Prime Number" + temp);
                         }
                     });
                     Log.d(TAG, "Running on a different thread using Runnable Interface: " + i);
