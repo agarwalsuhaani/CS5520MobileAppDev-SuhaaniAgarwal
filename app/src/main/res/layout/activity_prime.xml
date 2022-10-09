@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".Prime">
 
+    <CheckBox
+        android:id="@+id/checkbox_pacifierSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="32dp"
+        android:text="Pacifier Switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_findPrimes"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <Button
+        android:id="@+id/btn_findPrimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="292dp"
+        android:text="Find Primes"
+        android:onClick="runOnRunnableThread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_terminate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Terminate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_findPrimes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toEndOf="@+id/btn_findPrimes" />
+
+    <TextView
+        android:id="@+id/txtView_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        android:text="Current Number "
+        app:layout_constraintBottom_toTopOf="@+id/checkbox_pacifierSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_findPrimes"
+        app:layout_constraintVertical_bias="0.462" />
 </androidx.constraintlayout.widget.ConstraintLayout>

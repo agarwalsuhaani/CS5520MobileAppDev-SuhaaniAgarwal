@@ -20,9 +20,6 @@
             android:name=".dialog"
             android:exported="false" />
         <activity
-            android:name=".activity_link_layout"
-            android:exported="false" />
-        <activity
             android:name=".LinkCollector"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
