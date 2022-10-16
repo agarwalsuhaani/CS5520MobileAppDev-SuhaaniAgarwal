@@ -62,4 +62,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void locationUpdate(View v) {
+        Button btnLocation = (Button) findViewById(R.id.btn_location);
+        btnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Location.class));
+            }
+        });
+    }
 }

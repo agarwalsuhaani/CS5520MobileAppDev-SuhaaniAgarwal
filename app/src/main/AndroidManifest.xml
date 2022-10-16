@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.northeastern.numad22fa_suhaaniagarwal">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Fa_SuhaaniAgarwal"
         tools:targetApi="31">
+        <activity
+            android:name=".Location"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
         <activity
             android:name=".Prime"
             android:configChanges="orientation|screenSize"
