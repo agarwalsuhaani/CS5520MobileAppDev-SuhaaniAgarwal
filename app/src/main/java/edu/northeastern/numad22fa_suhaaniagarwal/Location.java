@@ -61,7 +61,7 @@ public class Location extends AppCompatActivity {
                             {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
                 }
 
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, new LocationListener() {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(@NonNull android.location.Location location) {
                         double totalDistance = 0;
