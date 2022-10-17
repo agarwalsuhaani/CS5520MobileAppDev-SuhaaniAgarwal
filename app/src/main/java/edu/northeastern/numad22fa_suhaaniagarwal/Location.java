@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -84,7 +85,36 @@ public class Location extends AppCompatActivity {
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                distanceTxt.setText("Distance: 0");
+                final Dialog dialog = new Dialog(Location.this);
+
+                // setting content view to dialog
+                dialog.setContentView(R.layout.activity_dialog_reset_location);
+
+                // getting reference of TextView
+                TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
+                TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
+
+                // click listener for No
+                dialogButtonNo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // dismiss the dialog
+                        dialog.dismiss();
+
+                    }
+                });
+
+                dialogButtonYes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // dismiss the dialog and exit the exit
+                        dialog.dismiss();
+                        distanceTxt.setText("Distance: 0");
+
+                    }
+                });
+
+                dialog.show();
             }
         });
     }
