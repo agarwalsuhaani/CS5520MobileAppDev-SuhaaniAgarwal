@@ -86,19 +86,12 @@ public class Location extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(Location.this);
-
-                // setting content view to dialog
                 dialog.setContentView(R.layout.activity_dialog_reset_location);
-
-                // getting reference of TextView
                 TextView dialogButtonYes = (TextView) dialog.findViewById(R.id.textViewYes);
                 TextView dialogButtonNo = (TextView) dialog.findViewById(R.id.textViewNo);
-
-                // click listener for No
                 dialogButtonNo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // dismiss the dialog
                         dialog.dismiss();
 
                     }
@@ -107,9 +100,8 @@ public class Location extends AppCompatActivity {
                 dialogButtonYes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // dismiss the dialog and exit the exit
                         dialog.dismiss();
-                        distanceTxt.setText("Distance: 0");
+                        distanceTxt.setText("Distance Travelled: 0.0");
 
                     }
                 });
